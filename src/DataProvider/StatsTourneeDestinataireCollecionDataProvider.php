@@ -1,7 +1,7 @@
 <?php
 // api/src/DataProvider/StatsDestinataireCollectionDataProvider.php
 
-namespace App\DataProvider;
+namespace App\DataProvider\StatsTourneeDestinataireCollectionDataProvider;
 
 use ApiPlatform\Core\DataProvider\CollectionDataProviderInterface;
 use ApiPlatform\Core\DataProvider\RestrictedDataProviderInterface;

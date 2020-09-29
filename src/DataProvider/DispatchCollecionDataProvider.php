@@ -1,7 +1,7 @@
 <?php
 // api/src/DataProvider/DispatchCollectionDataProvider.php
 
-namespace App\DataProvider;
+namespace App\DataProvider\DispatchCollectionDataProvider;
 
 use ApiPlatform\Core\DataProvider\CollectionDataProviderInterface;
 use ApiPlatform\Core\DataProvider\RestrictedDataProviderInterface;
