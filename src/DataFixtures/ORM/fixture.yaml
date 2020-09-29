@@ -1,0 +1,316 @@
+App\Entity\ClientsGroupes:
+  groupes_{1..2}:
+    libelle: <company()>
+
+App\Entity\CodeAgence:
+  agence_{1..2}:
+    nom_agence: <stateAbbr()()>
+
+App\Entity\Destinataire:
+  destinataire_{1..4}:
+    nom: '<cityPrefix()>'
+    marge: '45'
+    typeDestinataire: 'A'
+    clients: '@clients*'
+
+
+App\Entity\NumeroTournee:
+  numeroTournee_{1..4}:
+    nom: '<cityPrefix()>'
+
+App\Entity\Clients:
+  clients_{1..4}:
+    client_id: <randomDigitNotNull()>
+    pseudo_zou: <cityPrefix()>
+    pass_zou: 'test1234'
+    pseudo: <cityPrefix()>
+    password: 'test1234'
+    nom_client: <name()>
+    clientsGroupes: '@groupes*'
+    codeAgence: '@agence*'
+    is_actif: 1
+    delais_livraison: '30'
+
+App\Entity\StatistiqueClient:
+  statistiqueClients_{1..30}:
+    nombre_missions_prevues: '<randomNumber(3)>'
+    nombre_colis_prevus: '<randomNumber(3)>'
+    nombre_missions_enlevees: '<randomNumber(3)>'
+    nombre_colis_enleves: '<randomNumber(3)>'
+    nombre_missions_enlevees_scan: '<randomNumber(3)>'
+    nombre_colis_enleves_scan: '<randomNumber(3)>'
+    nombre_missions_livrees: '<randomNumber(3)>'
+    nombre_colis_livres: '<randomNumber(3)>'
+    nombre_missions_livrees_scan: '<randomNumber(3)>'
+    nombre_colis_livres_scan: '<randomNumber(3)>'
+    nombre_missions_retardees_enlevement: '<randomNumber(3)>'
+    nombre_missions_retardees_livraison: '<randomNumber(3)>'
+    nombre_colis_livres_hors_delais: '<randomNumber(3)>'
+    date_livraison: '<dateTime()>'
+    clients: '@clients*'
+
+App\Entity\StatistiqueclientPoints:
+  statistiqueClientPoints_{1..30}:
+    nombre_missions_prevues: '<randomNumber(3)>'
+    nombre_colis_prevues: '<randomNumber(3)>'
+    nombre_missions_enlevees: '<randomNumber(3)>'
+    nombre_colis_enleves: '<randomNumber(3)>'
+    nombre_missions_enlevees_scan: '<randomNumber(3)>'
+    nombre_colis_enleves_scan: '<randomNumber(3)>'
+    nombre_missions_livrees: '<randomNumber(3)>'
+    nombre_colis_livres: '<randomNumber(3)>'
+    nombre_missions_livrees_scan: '<randomNumber(3)>'
+    nombre_colis_livres_scan: '<randomNumber(3)>'
+    date_livraison: '<dateTime()>'
+    clients: '@clients*'
+
+App\Entity\StatistiqueDestinataire:
+  statistiqueDestinataire_{1..30}:
+    nombre_missions_prevues: '<randomNumber(3)>'
+    nombre_colis_prevus: '<randomNumber(3)>'
+    nombre_missions_enlevees: '<randomNumber(3)>'
+    nombre_colis_enleves: '<randomNumber(3)>'
+    nombre_missions_enlevees_scan: '<randomNumber(3)>'
+    nombre_colis_enleves_scan: '<randomNumber(3)>'
+    nombre_missions_livrees: '<randomNumber(3)>'
+    nombre_colis_livres: '<randomNumber(3)>'
+    nombre_missions_livrees_scan: '<randomNumber(3)>'
+    nombre_colis_livres_scan: '<randomNumber(3)>'
+    nombre_missions_retardees_enlevement: '<randomNumber(3)>'
+    nombre_colis_retardes_enlevement: '<randomNumber(3)>'
+    nombre_missions_retardees_livraison: '<randomNumber(3)>'
+    nombre_colis_retardes_livraison: '<randomNumber(3)>'
+    date_livraison: '<dateTime()>'
+    resultat: '<realText()>'
+    clients: '@clients*'
+
+App\Entity\StatistiqueDestinatairePoints:
+  statistiqueDestinatairePoints_{1..30}:
+    nombre_missions_prevues: '<randomNumber(3)>'
+    nombre_colis_prevus: '<randomNumber(3)>'
+    nombre_missions_enlevees: '<randomNumber(3)>'
+    nombre_colis_enleves: '<randomNumber(3)>'
+    nombre_missions_enlevees_scan: '<randomNumber(3)>'
+    nombre_colis_enleves_scan: '<randomNumber(3)>'
+    nombre_missions_livrees: '<randomNumber(3)>'
+    nombre_colis_livres: '<randomNumber(3)>'
+    nombre_missions_livrees_scan: '<randomNumber(3)>'
+    nombre_colis_livres_scan: '<randomNumber(3)>'
+    date_livraison: '<dateTime()>'
+    clients: '@clients*'
+
+App\Entity\StatistiqueDestinataireRetards:
+  statistiqueDestinataireRetards_{1..30}:
+    nombre_missions_retardees_enlevement: '<randomNumber(3)>'
+    nombre_colis_retardes_enlevement: '<randomNumber(3)>'
+    nombre_missions_retardees_livraison: '<randomNumber(3)>'
+    nombre_colis_retardes_livraison: '<randomNumber(3)>'
+    date_livraison: '<dateTime()>'
+    clients: '@clients*'
+
+App\Entity\statistiqueHeureMoyenneDst:
+  statistiqueHeureMoyenneDst_{1..30}:
+    date_livraison: '<dateTime()>'
+    resultat: '<realText()>'
+    clients: '@clients*'
+
+App\Entity\StatistiqueHeureMoyenneDstTournee:
+  statistiqueHeureMoyenneDstTournee_{1..30}:
+    date_livraison: '<dateTime()>'
+    resultat: '<realText()>'
+    clients: '@clients*'
+
+App\Entity\StatistiqueTournee:
+  statistiqueTournee_{1..30}:
+    nombre_missions_prevues: '<randomNumber(3)>'
+    nombre_colis_prevus: '<randomNumber(3)>'
+    nombre_missions_enlevees: '<randomNumber(3)>'
+    nombre_colis_enleves: '<randomNumber(3)>'
+    nombre_missions_enlevees_scan: '<randomNumber(3)>'
+    nombre_colis_enleves_scan: '<randomNumber(3)>'
+    nombre_missions_livrees: '<randomNumber(3)>'
+    nombre_colis_livres: '<randomNumber(3)>'
+    nombre_missions_livrees_scan: '<randomNumber(3)>'
+    nombre_colis_livres_scan: '<randomNumber(3)>'
+    nombre_missions_retardees: '<randomNumber(3)>'
+    nombre_colis_retardes: '<randomNumber(3)>'
+    nombre_missions_retardees_livraison: '<randomNumber(3)>'
+    nombre_missions_retardees_enlevement: '<randomNumber(3)>'
+    date_livraison: '<dateTime()>'
+    clients: '@clients*'
+    numeroTournee: '@numeroTournee*'
+
+App\Entity\StatistiqueTourneeDestinataires:
+  statistiqueTourneeDestinataires_{1..30}:
+    nombre_missions_prevues: '<randomNumber(3)>'
+    nombre_colis_prevus: '<randomNumber(3)>'
+    nombre_missions_enlevees: '<randomNumber(3)>'
+    nombre_colis_enleves: '<randomNumber(3)>'
+    nombre_missions_enlevees_scan: '<randomNumber(3)>'
+    nombre_colis_enleves_scan: '<randomNumber(3)>'
+    nombre_missions_livrees: '<randomNumber(3)>'
+    nombre_colis_livres: '<randomNumber(3)>'
+    nombre_missions_livrees_scan: '<randomNumber(3)>'
+    nombre_colis_livres_scan: '<randomNumber(3)>'
+    nombre_missions_retardees_enlevement: '<randomNumber(3)>'
+    nombre_colis_retardes_livraison: '<randomNumber(3)>'
+    nombre_missions_retardees_livraison: '<randomNumber(3)>'
+    nombre_colis_retardes_enlevement: '<randomNumber(3)>'
+    date_livraison: '<dateTime()>'
+    resultat: '<realText()>'
+    clients: '@clients*'
+
+App\Entity\StatistiqueTourneePoints:
+  statistiqueTourneePoints_{1..30}:
+    nombre_missions_prevues: '<randomNumber(3)>'
+    nombre_colis_prevus: '<randomNumber(3)>'
+    nombre_missions_enlevees: '<randomNumber(3)>'
+    nombre_colis_enleves: '<randomNumber(3)>'
+    nombre_missions_enlevees_scan: '<randomNumber(3)>'
+    nombre_colis_enleves_scan: '<randomNumber(3)>'
+    nombre_missions_livrees: '<randomNumber(3)>'
+    nombre_colis_livres: '<randomNumber(3)>'
+    nombre_missions_livrees_scan: '<randomNumber(3)>'
+    nombre_colis_livres_scan: '<randomNumber(3)>'
+    date_livraison: '<dateTime()>'
+    clients: '@clients*'
+    numeroTournee: '@numeroTournee*'
+
+App\Entity\StatistiqueTourneeRetards:
+  statistiqueTourneeRetards_{1..30}:
+    nombre_missions_retardees_enlevement: '<randomNumber(3)>'
+    nombre_colis_retardes_enlevement: '<randomNumber(3)>'
+    nombre_missions_retardees_livraison: '<randomNumber(3)>'
+    nombre_colis_retardes_livraison: '<randomNumber(3)>'
+    date_livraison: '<dateTime()>'
+    clients: '@clients*'
+
+    
+App\Entity\Dispatch:
+  dispatch_{1..30}:
+    agence: <cityPrefix()>
+    date_saisie: <dateTime()>
+    heure_saisie: <dateTime()>
+    nom_createur: <cityPrefix()>
+    absents_regulier: <cityPrefix()>
+    code_course: <randomDigit()>
+    numero_ordre: <cityPrefix()>
+    observations: <realText()>
+    incident: <realText()>
+    is_warning: <cityPrefix()>
+    nomclient: <cityPrefix()>
+    idclient: "6"
+    contact: <cityPrefix()>
+    telephone: <cityPrefix()>
+    ref_dossier: <cityPrefix()>
+    depart: <realText()>
+    destination: "marseille"
+    comment_depart: <realText()>
+    comment_destination: <realText()>
+    numcarte: <cityPrefix()>
+    nb_bons: <randomFloat()>
+    nb_enveloppes: <randomDigit()>
+    pc1: <randomFloat()>
+    vd_choix: <cityPrefix()>
+    valeur_assurance: <randomDigit()>
+    is_cr: <cityPrefix()>
+    is_cr2: <cityPrefix()>
+    val_cr: <randomFloat()>
+    is_9h: <cityPrefix()>
+    is_sam: <cityPrefix()>
+    is_portdu: <cityPrefix()>
+    is_part: <cityPrefix()>
+    is_infofin: <cityPrefix()>
+    is_pktranq: <cityPrefix()>
+    is_pktranqplus: <cityPrefix()>
+    is_optioncorse: <cityPrefix()>
+    peage: <randomFloat()>
+    prix_mission_ht: <randomFloat()>
+    prix_prepaye: <randomFloat()>
+    prix_options_ht: <randomFloat()>
+    total_ht: <randomFloat()>
+    total_ttc: <randomFloat()>
+    total_tva: <randomFloat()>
+    total_a_encaisser: <randomFloat()>
+    date_course: <dateTime()>
+    date_course2: <dateTime()>
+    heure_rdv_def: <dateTime()>
+    heure_rdv: <dateTime()>
+    heure_rdv2: <dateTime()>
+    heure_rdv_c1: <dateTime()>
+    heure_rdv_c2: <dateTime()>
+    horaire_impose: <cityPrefix()>
+    num_bord: <cityPrefix()>
+    num_bord2:  <cityPrefix()>
+    num_tournee: "M-11"
+    idservice: <randomDigit()>
+    agent_st: <cityPrefix()>
+    agent_st2: <cityPrefix()>
+    differe_livre: <cityPrefix()>
+    idvehicule: <randomDigit()>
+    nb_colis: <randomDigit()>
+    poids: <randomFloat()>
+    nature_marchandises: <cityPrefix()>
+    idville: <randomDigit()>
+    idpays: <randomDigit()>
+    idcoursier: <randomDigit()>
+    idcoursier2: <randomDigit()>
+    num_agent_principal: <cityPrefix()>
+    course_affectee_1: <cityPrefix()>
+    course_affectee_2: <cityPrefix()>
+    etat_course: <cityPrefix()>
+    heure_aff1: <dateTime()>
+    heure_aff2: <dateTime()>
+    heure_enleve: <dateTime()>
+    heure_livre: <dateTime()>
+    date_enleve: <dateTime()>
+    date_livre: <dateTime()>
+    temps_attente: <randomDigit()>
+    idweb: <randomDigit()>
+    service_cat: <cityPrefix()>
+    service_sscat: <cityPrefix()>
+    idzg: <randomDigit()>
+    zou_centrecout: <cityPrefix()>
+    signature_l: <realText()>
+    signature_e: <realText()>
+    id_adresse_zou: <randomDigit()>
+    prioritaire_zou: <cityPrefix()>
+    ok_cr: <dateTime()>
+    refus_cr: <dateTime()>
+    id_regulier: <randomDigit()>
+    prix_achat_st: <randomFloat()>
+    motif_refus_cr: <cityPrefix()>
+    cr_comms: <cityPrefix()>
+    cr_type: <cityPrefix()>
+    valo_bo: <randomFloat()>
+    exp_nom: <cityPrefix()>
+    exp_adr1: <cityPrefix()>
+    exp_adr2: <cityPrefix()>
+    exp_adr3: <cityPrefix()>
+    exp_cp: <cityPrefix()>
+    exp_ville: <cityPrefix()>
+    exp_tel1: <cityPrefix()>
+    exp_tel2: <cityPrefix()>
+    exp_mail: <cityPrefix()>
+    exp_geotag: <cityPrefix()>
+    exp_etage: <randomDigit()>
+    exp_porte: <cityPrefix()>
+    exp_digicode: <cityPrefix()>
+    dst_nom: <cityPrefix()>
+    dst_adr1: <cityPrefix()>
+    dst_adr2: <cityPrefix()>
+    dst_adr3: <cityPrefix()>
+    dst_cp: <cityPrefix()>
+    dst_ville: <cityPrefix()>
+    dst_tel1: <cityPrefix()>
+    dst_tel2: <cityPrefix()>
+    dst_mail: <cityPrefix()>
+    dst_geotag: <cityPrefix()>
+    dst_etage: <randomDigit()>
+    dst_porte: <cityPrefix()>
+    dst_digicode: <cityPrefix()>
+    disp_date_esc_send: <dateTime()> 
+    disp_date_esc_rcv: <dateTime()> 
+    disp_esc_value: <randomDigit()>
+    disp_latitude: <randomFloat()>
+    disp_longitude: <randomFloat()>
